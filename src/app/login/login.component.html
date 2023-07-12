@@ -1,0 +1,123 @@
+<div class="Body" >
+
+  
+        <mat-card class="login-card">
+            <mat-card-header>
+                <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                <mat-card-title>Login/Register</mat-card-title>
+                <mat-card-subtitle>E64 Task</mat-card-subtitle>
+            </mat-card-header>
+    
+            <mat-card-content>
+    
+                <mat-tab-group>
+                    <mat-tab label="Login">
+                        <form [formGroup]="loginForm" (ngSubmit)="loginSubmitted()"  class="example-form">
+                            <div>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label for="loginuser">Username</mat-label>
+                                    <input type="text" id="loginuser" formControlName="loginuser" matInput placeholder="Enter Username" [(ngModel)]="LoginVerify.Username">
+                                    <mat-icon matPrefix>account_circle</mat-icon>
+                                  </mat-form-field>
+                                  <div class="form-text text-danger errorField" *ngIf="LoginUser.errors?.['required'] && (LoginUser.touched || LoginUser.dirty)">
+                                    Username is required
+                                </div>
+                                <div class="form-text text-danger errorField" *ngIf="LoginUser.errors?.['minlength']&& (LoginUser.touched || LoginUser.dirty)">
+                                    Username is too short
+                                </div>
+                                <div class="form-text text-danger errorField" *ngIf="LoginUser.errors?.['pattern']&& (LoginUser.touched || LoginUser.dirty)">
+                                    Username should start with an alphabet
+                                </div>
+                            </div>
+                            <div>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label for="loginPass">Password</mat-label>
+                                    <input id="loginPass" formControlName="loginPass" type="password" matInput placeholder="Enter Password" [(ngModel)]="LoginVerify.Password">
+                                    <mat-icon  matPrefix>lock</mat-icon>
+                                  </mat-form-field>
+                                  <div class="form-text text-danger errorField" *ngIf="LoginPass.errors?.['required'] && (LoginPass.touched || LoginPass.dirty)">
+                                    Password is required
+                                </div>
+                                <div class="form-text text-danger errorField" *ngIf="LoginPass.errors?.['minlength'] || LoginPass.errors?.['maxlength'] && (LoginPass.touched || LoginPass.dirty)">
+                                    Password should contain at least 6 character  and at max 12 characters
+                                </div>
+                            </div>
+                            
+                            <div >
+                                <button  class="mat-button" [disabled]="loginForm.invalid" color="primary"  mat-raised-button >LogIn</button>
+                                <!-- <button  class="mat-button" [disabled]="loginForm.invalid"  [style.opacity]="loginForm.invalid ? '0.7' : '1'"  style="background-color: #4057df; color:white"  mat-raised-button >LogIn</button> -->
+                            </div>
+          
+                        </form>
+                    </mat-tab>
+                    <mat-tab label="Register"> 
+                        <form [formGroup]="registerForm" (ngSubmit)="registered()" class="example-form">
+                            <div>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label for="username"> Username</mat-label>
+                                    <input type="text" id="username" formControlName="username" matInput placeholder="Enter Username" [(ngModel)]="addUser.Username">
+                                    <mat-icon matPrefix>account_circle</mat-icon>
+                                    <!-- <mat-error >
+                                        Please enter a valid email address
+                                    </mat-error> -->
+                                    <!-- <mat-error *ngIf="Username.errors?.['required']">
+                                        Email is <strong>required</strong>
+                                    </mat-error> -->
+                                    
+                                  </mat-form-field>
+                                  <div class="form-text text-danger errorField" *ngIf="Username.errors?.['required'] && (Username.touched || Username.dirty)">
+                                    Username is required
+                                </div>
+                                <div class="form-text text-danger errorField" *ngIf="Username.errors?.['minlength']&& (Username.touched || Username.dirty)">
+                                    Username is too short
+                                </div>
+                                <div class="form-text text-danger errorField" *ngIf="Username.errors?.['pattern']&& (Username.touched || Username.dirty)">
+                                    Username should start with an alphabet
+                                </div>
+                            </div>
+                            <div>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label for="password">Password</mat-label>
+                                    <input  type="password" id="password" formControlName="password" matInput placeholder="Enter Password" [(ngModel)]="addUser.Password">
+                                    <mat-icon matPrefix>lock</mat-icon>
+                                  </mat-form-field>
+                                  <div class="form-text text-danger errorField" *ngIf="Password.errors?.['required'] && (Username.touched || Username.dirty)">
+                                    Password is required
+                                </div>
+                                <div class="form-text text-danger errorField" *ngIf="Password.errors?.['minlength'] || Password.errors?.['maxlength'] && (Username.touched || Username.dirty)">
+                                    Password should contain at least 6 character  and at max 12 characters
+                                </div>
+                              
+
+                            </div>
+                            <div>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label for="repassword">Confirm Password</mat-label>
+                                    <input  type="password" matInput placeholder="Enter Password" id="repassword" formControlName="repassword">
+                                    <mat-icon matPrefix>lock</mat-icon>
+                                  </mat-form-field>
+                                  <div class="form-text text-danger errorField" [ngStyle]="{'display':repass}">
+                                    Confirm Password is invalid
+                                </div>
+                            </div>
+                            <div>
+                                <button class="mat-button" [disabled]="registerForm.invalid" color="primary" mat-raised-button > Register</button>
+                           
+                                <!-- <button class="mat-button" [disabled]="registerForm.invalid"  [style.opacity]="registerForm.invalid ? '0.7' : '1'"   style="background-color: #4057df; color:white"  mat-raised-button > Register</button>
+                             -->
+                            </div>
+                           
+          
+                        </form>
+                    </mat-tab>
+    
+                </mat-tab-group>
+    
+    
+            </mat-card-content>
+    
+        </mat-card>
+   
+   
+
+</div>

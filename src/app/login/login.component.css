@@ -1,0 +1,49 @@
+
+.Body{
+    /* background-color: #1976d2; */
+    /* background-color: #045de9;background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%); */
+    background-color: #F5F5F5;
+    height: 100%;
+    text-align: -webkit-center;
+    /* display: flex;
+    background-image: url('C:\Users\Laraib Siddiqui\Documents\My App\MyTask\src\assets');
+    background-size: cover;
+    background-repeat: no-repeat; */
+    
+}
+.login-card{
+     width: 400px;
+    margin: auto;
+    background-color: #F5F5F5;
+  
+
+}
+
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .example-full-width {
+    width: 100%;
+    margin-top: 40px;
+  }
+  .mat-button{
+    width: 100%;
+    font-size: 16px;
+    margin-top: 40px;
+    height: 50px;
+    border-radius: 50px;
+  }
+ .errorField{
+  text-align: left;
+  margin-top: -20px;
+ }
+ /* .ddd */

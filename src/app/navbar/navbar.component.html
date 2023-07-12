@@ -1,0 +1,25 @@
+
+    <mat-toolbar style="width: 100%; background-color:  #001C30;">
+     <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button> -->
+    <mat-icon  style="color: white;">assignment</mat-icon>
+    <span style="color: white; margin-left: 5px;">E64 Task</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button >
+      <mat-icon style="color: white;">account_circle</mat-icon>
+    </button>
+    <span style="color: white;">{{firstLetter + remainingLetters}}</span>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon style="color: white;">arrow_drop_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="logout()">Logout</button>
+    </mat-menu>
+    <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="logout()">
+    
+      <mat-icon style="color: white;">logout</mat-icon>
+    </button> -->
+  
+  </mat-toolbar>
+ 
